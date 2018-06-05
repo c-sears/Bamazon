@@ -1,0 +1,15 @@
+{
+  "name": "sql_hwrk",
+  "version": "0.0.1",
+  "description": "Bamazon Product Interface",
+  "main": "logic.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Caleb Sears (https://github.com/c-sears)",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^6.0.0",
+    "mysql": "^2.15.0"
+  }
+}
