@@ -1,6 +1,6 @@
 {
   "name": "sql_hwrk",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Bamazon Product Interface",
   "main": "logic.js",
   "scripts": {
@@ -9,7 +9,10 @@
   "author": "Caleb Sears (https://github.com/c-sears)",
   "license": "ISC",
   "dependencies": {
+    "console.table": "^0.10.0",
+    "dotenv": "^6.0.0",
     "inquirer": "^6.0.0",
-    "mysql": "^2.15.0"
+    "mysql": "^2.15.0",
+    "table": "^4.0.3"
   }
 }
