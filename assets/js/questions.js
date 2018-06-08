@@ -29,7 +29,7 @@ exports.mgr_init_quest = [
             'View products',
             'View low inventory',
             'Add inventory',
-            'Add product'
+            'Add new product'
         ]
     }
 ]
@@ -44,5 +44,28 @@ exports.mgr_add_inv = [
         type: 'input',
         message: 'Enter quantity to add',
         name: 'quantity'
+    }
+]
+
+exports.mgr_add_prod = [
+    {
+        type: 'input',
+        message: 'Enter name of product',
+        name: 'prod_name',
+    },
+    {
+        type: 'input',
+        message: 'Enter product\'s department name',
+        name: 'depart_name',
+    },
+    {
+        type: 'input',
+        message: 'Enter stock quantity of product',
+        name: 'stock_quant',
+    },
+    {
+        type: 'input',
+        message: 'Enter price of product',
+        name: 'prod_price',
     }
 ]

@@ -1,5 +1,5 @@
 const { prompt } = require('inquirer')
-const { mgr_init_quest, mgr_add_inv } = require('./questions')
+const { mgr_init_quest, mgr_add_inv, mgr_add_prod } = require('./questions')
 require('console.table')
 
 exports.Manager = function(){
@@ -19,7 +19,7 @@ exports.Manager = function(){
     }
 
     this.disp_products = function(){
-        this.query_db(`SELECT * FROM products`, data => console.table(data))
+        this.query_db(`SELECT * FROM products ORDER BY department_name`, data => console.table(data))
     }
 
     this.view_low_inv = function(){
@@ -33,6 +33,13 @@ exports.Manager = function(){
                 const new_amount = parseInt(amount)+parseInt(quantity)
                 this.update_db(`UPDATE products SET stock_quantity=${new_amount} WHERE id=${prod_id}`)
             })
+        })
+    }
+
+    this.add_product = function(){
+        prompt(mgr_add_prod).then(({ prod_name,depart_name,stock_quant,prod_price })=>{
+            this.add_to_db(`INSERT INTO products(product_name,department_name,price,stock_quantity)
+                            VALUES('${prod_name}','${depart_name}',${prod_price},${stock_quant})`)
         })
     }
 }

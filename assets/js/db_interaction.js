@@ -28,8 +28,7 @@ exports.Interaction = function(){
     * @param  {string} query sql style syntax for query
     * @param  {function} cb callback function executing on query data
     */
-
-   this.query_db = function(query, cb){
+    this.query_db = function(query, cb){
 
         this.connect_to_db()
 
@@ -38,13 +37,13 @@ exports.Interaction = function(){
             return cb(data)
         })
         this.disconnect_db()
-   }
+    }
    
-   /**
-    * @param  {string} update_query sql style syntax for update query
-    * @returns {promise} returns a promise
-    */
-   this.update_db = async function(update_query){
+    /**
+     * @param  {string} update_query sql style syntax for update query
+     * @returns {promise} returns a promise
+     */
+    this.update_db = async function(update_query){
 
         this.connect_to_db()
 
@@ -55,7 +54,19 @@ exports.Interaction = function(){
         this.connection.end()
 
         return Promise.resolve()
-   }
+    }
 
+    /**
+     * @param  {string} query `INSERT INTO` query
+     */
+    this.add_to_db = function(query){
 
+        this.connect_to_db()
+
+        this.connection.query(query, (err, data)=>{
+            if(err) throw err
+        })
+
+        this.connection.end()
+    }
 }
