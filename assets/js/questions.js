@@ -1,3 +1,5 @@
+// BEGIN CUSTOMER QUESTIONS
+// =========================================================================
 exports.cust_initial_quest = [
     {
         type: 'list',
@@ -19,7 +21,11 @@ exports.cust_purchase_quest = [
         name: 'purchase_amount'
     }
 ]
+// END CUSTOMER QUESTIONS
+// =========================================================================
 
+// BEGIN MANAGER QUESTIONS
+// =========================================================================
 exports.mgr_init_quest = [
     {
         type: 'list',
@@ -69,3 +75,5 @@ exports.mgr_add_prod = [
         name: 'prod_price',
     }
 ]
+// END MANAGER QUESTIONS
+// =========================================================================

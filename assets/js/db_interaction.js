@@ -4,7 +4,7 @@ const db = require('mysql')
 
 exports.Interaction = function(){
     
-    // holds connection object -- accessible in all methods off `Interaction`
+    // Holds connection object -- accessible in all methods of `Interaction`
     this.connection = {}
 
     // Creates a generic connection
