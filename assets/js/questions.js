@@ -1,4 +1,4 @@
-exports.initial_quest = [
+exports.cust_initial_quest = [
     {
         type: 'list',
         message: 'What would you like to do?',
@@ -7,7 +7,7 @@ exports.initial_quest = [
     }
 ]
 
-exports.purchase_quest = [
+exports.cust_purchase_quest = [
     {
         type: 'input',
         message: 'Enter ID of product.',
@@ -17,5 +17,32 @@ exports.purchase_quest = [
         type: 'input',
         message: 'How many units would you like to purchase?',
         name: 'purchase_amount'
+    }
+]
+
+exports.mgr_init_quest = [
+    {
+        type: 'list',
+        message: 'What would you like to do?',
+        name: 'do_next',
+        choices: [
+            'View products',
+            'View low inventory',
+            'Add inventory',
+            'Add product'
+        ]
+    }
+]
+
+exports.mgr_add_inv = [
+    {
+        type: 'input',
+        message: 'ID of product to add inventory',
+        name: 'prod_id'
+    },
+    {
+        type: 'input',
+        message: 'Enter quantity to add',
+        name: 'quantity'
     }
 ]

@@ -1,9 +1,9 @@
 const db = require('mysql')
 const { prompt } = require('inquirer')
-const { initial_quest, purchase_quest } = require('./questions')
+const { cust_initial_quest, cust_purchase_quest } = require('./questions')
 const { Interaction } = require('./db_interaction')
 require('console.table')
-require('dotenv').config({path:'../../.env'})
+// require('dotenv').config({path:'../../.env'})
 
 exports.Customer = function(){
     
@@ -13,7 +13,7 @@ exports.Customer = function(){
     }
 
     this.prompt_user = function(){
-        prompt(initial_quest).then(({ do_next }) =>{
+        prompt(cust_initial_quest).then(({ do_next }) =>{
             switch(do_next){
                 case 'List products':
                     this.disp_products()
@@ -29,7 +29,7 @@ exports.Customer = function(){
         let item_id
         let requested_amount
         let actual_amount
-        await prompt(purchase_quest).then(({ product_id, purchase_amount }) =>{
+        await prompt(cust_purchase_quest).then(({ product_id, purchase_amount }) =>{
             item_id = product_id
             requested_amount = purchase_amount
         })
@@ -53,6 +53,3 @@ exports.Customer = function(){
 
     }
 }
-
-const test = new Customer()
-test.prompt_user()

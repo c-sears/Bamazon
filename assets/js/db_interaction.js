@@ -1,7 +1,6 @@
 // Module to handle all sql database interactions
 
 const db = require('mysql')
-require('dotenv').config({path:'../../.env'})
 
 exports.Interaction = function(){
     
@@ -43,7 +42,7 @@ exports.Interaction = function(){
    
    /**
     * @param  {string} update_query sql style syntax for update query
-    * @returns {promise} 
+    * @returns {promise} returns a promise
     */
    this.update_db = async function(update_query){
 
