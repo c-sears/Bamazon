@@ -53,6 +53,14 @@ exports.mgr_add_inv = [
     }
 ]
 
+exports.mgr_ask_params = [
+    {
+        type: 'prompt',
+        message: 'Specify maximum stock quantity returned',
+        name: 'low_quant'
+    }
+]
+
 exports.mgr_add_prod = [
     {
         type: 'input',

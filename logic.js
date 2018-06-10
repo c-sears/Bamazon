@@ -5,7 +5,7 @@ const { Manager } = require('./assets/js/BamazonManager')
 const { Interaction } = require('./assets/js/db_interaction')
 require('dotenv').config()
 
-const myMan = new Customer()
+const myMan = new Manager()
 Object.setPrototypeOf(myMan, new Interaction())
 
-myMan.prompt_user()
+myMan.prompt_manager()

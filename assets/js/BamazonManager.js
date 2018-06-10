@@ -1,5 +1,8 @@
 const { prompt } = require('inquirer')
-const { mgr_init_quest, mgr_add_inv, mgr_add_prod } = require('./questions')
+const { mgr_init_quest, 
+        mgr_add_inv,
+        mgr_add_prod,
+        mgr_ask_params } = require('./questions')
 require('console.table')
 
 exports.Manager = function(){
@@ -22,8 +25,10 @@ exports.Manager = function(){
         this.query_db(`SELECT * FROM products ORDER BY department_name`, data => console.table(data))
     }
 
-    this.view_low_inv = function(){
-        this.query_db(`SELECT * from products WHERE stock_quantity <= 100`, data => console.table(data))
+    this.view_low_inv = async function(){
+        await prompt(mgr_ask_params).then(({ low_quant })=>{
+            this.query_db(`SELECT * from products WHERE stock_quantity <= ${low_quant}`, data => console.table(data))
+        })
     }
 
     this.add_inventory = function(){
