@@ -1,6 +1,6 @@
 {
   "name": "sql_hwrk",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Bamazon Product Interface",
   "main": "logic.js",
   "scripts": {
