@@ -6,7 +6,7 @@ const { mgr_init_quest,
 require('console.table')
 
 exports.Manager = function(){
-    this.prompt_manager = function(){
+    this.prompt_user = function(){
         prompt(mgr_init_quest).then(({ do_next }) =>{
             switch(do_next){
                 case 'View products':

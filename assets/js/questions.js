@@ -1,3 +1,20 @@
+// BEGIN INIT_LOGIC QUESTIONS
+// =========================================================================
+exports.init_logic = [
+    {
+        type: 'list',
+        message: 'Which role would you like to continue as?',
+        name: 'role',
+        choices: ['Manager','Customer']
+    }
+]
+// END INIT_LOGIC QUESTIONS
+// =========================================================================
+
+
+
+
+
 // BEGIN CUSTOMER QUESTIONS
 // =========================================================================
 exports.cust_initial_quest = [

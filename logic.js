@@ -1,11 +1,24 @@
 const { prompt } = require('inquirer')
-const { initial_questions } = require('./assets/js/questions')
+const { init_logic } = require('./assets/js/questions')
 const { Customer } = require('./assets/js/BamazonCustomer')
 const { Manager } = require('./assets/js/BamazonManager')
 const { Interaction } = require('./assets/js/db_interaction')
 require('dotenv').config()
 
-const myMan = new Manager()
-Object.setPrototypeOf(myMan, new Interaction())
 
-myMan.prompt_manager()
+async function start() {
+    let user
+    await prompt(init_logic).then(({ role })=>{
+        switch(role){
+            case 'Manager':
+                user = new Manager()
+                return Object.setPrototypeOf(user, new Interaction())
+            case 'Customer':
+                user =(new Customer())
+                return Object.setPrototypeOf(user, new Interaction())
+        }
+    })
+    user.prompt_user()
+}
+
+start()
